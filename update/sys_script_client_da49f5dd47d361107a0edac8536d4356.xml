@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>removing the message from u_other</description>
+        <field>u_other</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages>removing the message from u_other</messages>
+        <name>removing the message from u_other</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading ) {
+		return;
+   }
+	if (newValue === '') {
+		g_form.showFieldMsg('u_other','Briefly explain what you need.','info'); 
+		return;
+   }
+	var st = newValue.toLowerCase();
+	var cn;
+	if (st == "legal1" || st== "legal 1") {
+		cn = confirm('This category is available, click ok to change?');
+		if (cn) {
+			g_form.setValue("u_request_type","legal");
+			g_form.setValue("u_what_needed","legal1");
+			g_form.clearValue("u_other");
+		}
+	}
+	else if (st == "legal2" || st== "legal 2") {
+		cn = confirm('This category is available, click ok to change?');
+		if (cn) {
+			g_form.setValue("u_request_type","legal");
+			g_form.setValue("u_what_needed","legal2");
+			g_form.clearValue("u_other");
+		}
+	}
+	else if (st == "human resources 1" || st== "hr1") {
+		cn = confirm('This category is available, click ok to change?');
+		if (cn) {
+			g_form.setValue("u_request_type","hr");
+			g_form.setValue("u_what_needed","hr1");
+			g_form.clearValue("u_other");
+		}
+	}
+	else if (st == "human resources 2" || st== "hr2") {
+		cn = confirm('This category is available, click ok to change?');
+		if (cn) {
+			g_form.setValue("u_request_type","hr");
+			g_form.setValue("u_what_needed","hr2");
+			g_form.clearValue("u_other");
+		}
+	}
+	else if (st == "facilities 1" || st== "facilities1") {
+		cn = confirm('This category is available, click ok to change?');
+		if (cn) {
+			g_form.setValue("u_request_type","facilities");
+			g_form.setValue("u_what_needed","facilities1");
+			g_form.clearValue("u_other");
+		}
+	}
+	else if (st == "facilities 2" || st== "facilities2") {
+		cn = confirm('This category is available, click ok to change?');
+		if (cn) {
+			g_form.setValue("u_request_type","facilities");
+			g_form.setValue("u_what_needed","facilities2");
+			g_form.clearValue("u_other");
+		}
+	}
+	else if (st == "cis 1" || st== "cis1") {
+		cn = confirm('This category is available, click ok to change?');
+		if (cn) {
+			g_form.setValue("u_request_type","cis");
+			g_form.setValue("u_what_needed","cis1");
+			g_form.clearValue("u_other");
+		}
+	}
+	else if (st == "cis 2" || st== "cis2") {
+		cn = confirm('This category is available, click ok to change?');
+		if (cn) {
+			g_form.setValue("u_request_type","cis");
+			g_form.setValue("u_what_needed","cis2");
+			g_form.clearValue("u_other");
+		}
+	}
+	g_form.hideFieldMsg("u_other",true);
+   //Type appropriate comment here, and begin script below
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>jithin</sys_created_by>
+        <sys_created_on>2023-06-07 07:33:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>da49f5dd47d361107a0edac8536d4356</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>removing the message from u_other</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_da49f5dd47d361107a0edac8536d4356</sys_update_name>
+        <sys_updated_by>jithin</sys_updated_by>
+        <sys_updated_on>2023-06-07 09:48:20</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
